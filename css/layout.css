@@ -1,0 +1,160 @@
+*{
+    /* outline: solid; */
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.wrap{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*header*/
+header{
+    background-color: #CDDDAC;
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    height: 67px;
+    margin-top: 30px;
+    line-height: 50px;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+}
+nav ul li a{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(106, 128, 97);
+    border-bottom: 5px solid transparent;
+}
+nav ul li a:hover{
+    border-bottom: 5px solid rgb(222, 241, 53);
+    color: rgb(8, 8, 8);
+    transition: all .3s;
+}
+h1{
+    background-image: url(/images/logo.png);
+    width: 200px;
+    height: 100px;
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+    border-radius: 30%;
+    left: 168px;
+    top: 0px;
+}
+/*main*/
+
+
+/*footer*/
+footer{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CDDDAC;
+}
+.copyright{
+    display: flex;
+    align-items: center;
+}
+.copyright img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: block;
+    margin-right: 5px;
+}
+footer p{
+    color: rgb(106, 128, 97);
+    font-size: 14px;
+}
+/*group*/
+.group{
+    display: flex;
+    align-items: center;
+    background-color: #CDDDAC;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+.group li a{
+    padding: 5px;
+}
+.group li img{
+    border: 1px solid transparent;
+}
+.group li img:hover{
+    border: 1px solid yellow;
+}
+.group p{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/*media*/
+#nav_control{
+    display: none;
+}
+.nav_btn{
+    display: none;
+}
+@media (max-width:750px) {
+    main{
+        padding-top: 100px;
+    }
+    .nav_btn{
+        display: block;
+    }
+    .nav_btn{
+        position: absolute;
+        right: 20px;
+        top: 50px;
+        width: 30px;
+        height: 30px;
+    }
+    span{
+        color: transparent;
+    }
+    .nav_btn::before{
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 30px;
+        background-color: #448426;
+        box-shadow: 0px 10px 0px #448426,
+                    0px -10px 0px #448426;
+    }
+    header{
+        position: fixed;
+        width: 100%;
+        z-index: 6;
+    }
+    header nav ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: absolute;
+        z-index: 5;
+        top: 100px;
+        left: -80%;
+        background-color: #CDDDAC;
+        width: 70%;
+        height: 70vh;
+        text-align: center;
+        transition: .5s;
+    }
+    header nav ul li{
+        margin-top: 10px;
+    }
+    #nav_control:checked ~ header nav ul{
+        left: 0%;
+    }
+}
+
